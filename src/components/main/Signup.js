@@ -63,14 +63,14 @@ const Signup = () => {
   });
   return (
   <section className="vh-100 bg-img" >
-  <div className="container h-100">
+  <div className="container py-5 h-90">
     <div className="row d-flex justify-content-center align-items-center h-100">
       <div className="col-lg-12 col-xl-11">
         <div className="card text-black " style={{ borderRadius: 25, backgroundColor:"#f7f3f7" }}>
           <div className="card-body p-md-5">
             <div className="row justify-content-center">
-              <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                <p className="text-center h1 fw-bold mx-1 mx-md-4 mt-4">
+              <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1 ">
+                <p className="text-center h1 fw-bold mx-1 mx-md-4 mt-">
                   Sign up
                 </p>
                 <div className='mb-5 d-flex justify-content-center'>
@@ -132,7 +132,7 @@ const Signup = () => {
                     <div className=" flex-fill mb-0">
                       <input
                         type="password"
-                        id="cpassword"
+                        id="cPassword"
                         value={SignupForm.values.cPassword}
                         onChange={SignupForm.handleChange}
                         className="form-control"
@@ -155,20 +155,28 @@ const Signup = () => {
                     </label>
                   </div>
                   <div className="d-flex justify-content-center mb-2 mb-lg-4 d-grid ">
-                    <button type="button" className="btn text-white btn-lg" style={{backgroundColor:"rgb(2 2 88)"}}>
+                    <button type="submit" className="btn text-white btn-lg" style={{backgroundColor:"rgb(2 2 88)"}}>
                       Sign Up
                     </button>
                   </div>
+                  <div className='d-flex align-items-center  mx-1  ps-5 my-3'>
+                  <span className='border  w-50'></span>
+                  <span className="text-center px-2 text-black text-nowrap fw-bold"> or</span>
+                  <span className='border w-50'></span>
+                </div>
+                <div className='d-flex justify-content-center align-items-center'>
+                  <span className='ps-4 pe-2'><img src="https://appletio-js.500apps.com/img/SSO/google-icon.png" alt="" /></span>
+                  <span className='pe-3'><img src="	https://appletio-js.500apps.com/img/SSO/linkedin.svg" alt="" /></span>
+                  <span className='pe-3'><img src="https://appletio-js.500apps.com/img/SSO/microsoft.svg" alt="" /></span>
+                  <span className='sso-app'><img src="https://appletio-js.500apps.com/img/SSO/facebook.svg" alt=""/></span>
+                </div>
                 </form>
-                {/* <div className="divider d-flex justify-content-center align-items-center ">
-                  <p className="text-center fw-bold mx-3 mb-0">Or</p>
-                </div> */}
-
+               
               </div>
-              <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+              <div className="col-md-10 col-lg-6 col-xl-7 d-flex justify-content-center align-items-center order-1 order-lg-2">
                 <img
                   src="https://i.pinimg.com/564x/77/7e/35/777e352c75c03d20857ec826bffa7fb9.jpg"
-                  className="img-fluid girl-img"
+                  className="img-fluid"
                   alt="Sample"
                 />
               </div>

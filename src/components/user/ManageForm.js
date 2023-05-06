@@ -2,7 +2,7 @@ import React from 'react'
 
 const ManageForm = () => {
   return (
-    <div>ManageForm</div>
+    <h1>ManageForm</h1>
   )
 }
 

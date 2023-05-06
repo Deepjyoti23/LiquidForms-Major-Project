@@ -36,8 +36,9 @@ const Login = () => {
 			}
 		}
 	})
+
   return (
-    <div className=" vh-100 " style={{backgroundImage:"url(https://cdn.cbeditz.com/cbeditz/large/11625065457gxal4eswybfcu4gjh3m8lzq2hwdu5an4zslf4az4wbba9bxwui4yuy9dhozosejtvalc5w7cszl6aymprc6jcix4jhr5quycwdzr.jpg)", backgroundSize: 'cover',backdropFilter:"blur(5px)"}}>
+    <div className=" vh-100 " style={{backgroundImage:"url(https://cdn.cbeditz.com/cbeditz/large/11625065457gxal4eswybfcu4gjh3m8lzq2hwdu5an4zslf4az4wbba9bxwui4yuy9dhozosejtvalc5w7cszl6aymprc6jcix4jhr5quycwdzr.jpg)", backgroundSize: 'cover',backdropFilter:'blur(50px)', backdropFilter:"contrast(100px)"}}>
   <div className="container py-5 h-90">
     <div className="row d-flex justify-content-center align-items-center h-100">
       <div className="col col-xl-9">
@@ -75,7 +76,7 @@ const Login = () => {
                   <div className=" mb-2">
                     <input
                       type="email"
-                      id=""
+                      id="email"
                       onChange={loginForm.handleChange}
 											value={loginForm.values.email}
                       className="form-control form-control-lg"
@@ -87,7 +88,7 @@ const Login = () => {
                   <div className="mb-2">
                     <input
                       type="password"
-                      id=""
+                      id="password"
                       onChange={loginForm.handleChange}
 											value={loginForm.values.password}
                       className="form-control form-control-lg"
@@ -100,7 +101,7 @@ const Login = () => {
                     <button
                       className="btn btn-lg text-white"
                       style={{ backgroundColor: "rgb(2 2 88)" }}
-                      type="button"
+                      type="submit"
                     >
                       Login
                     </button>
