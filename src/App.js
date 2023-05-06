@@ -1,23 +1,39 @@
 import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom'
+import Main from './components/main';
+import User from './components/user';
+import Home from './components/main/Home';
+import Signup from './components/main/Signup';
+import Login from './components/main/Login';
+import Navbar from './components/main/Navbar';
+import LiveForm from './components/main/LiveForm';
+import EditForm from './components/user/EditForm';
+import ManageForm from './components/user/ManageForm';
+import UserProfile from './components/user/UserProfile';
+// import Navbar2 from './components/user/Navbar2';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+     <Navbar />
+        <Routes>
+        <Route path='/' element={<Navigate to='/home' /> } />
+          <Route path="main" element={<Main />}>
+            <Route path="home" element={<Home />}/>
+            <Route path="sign" element={<Signup />}/>
+            <Route path="login" element={<Login />}/>
+            <Route path="Live" element={<LiveForm />}/>
+          </Route>
+          <Route path="user" element={<User />}>
+            <Route path="EditForm" element={<EditForm />}/>
+            <Route path="ManageForm" element={<ManageForm />}/>
+            <Route path="UserProfile" element={<UserProfile />}/>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
