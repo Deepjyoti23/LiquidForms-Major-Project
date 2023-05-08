@@ -11,6 +11,7 @@ import LiveForm from './components/main/LiveForm';
 import EditForm from './components/user/EditForm';
 import ManageForm from './components/user/ManageForm';
 import UserProfile from './components/user/UserProfile';
+import Login_new from './components/main/Login_new';
 // import Navbar2 from './components/user/Navbar2';
 
 
@@ -18,13 +19,13 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-     <Navbar />
         <Routes>
-        <Route path='/' element={<Navigate to='/home' /> } />
+        <Route path='/' element={<Navigate to='/main/home' /> } />
           <Route path="main" element={<Main />}>
             <Route path="home" element={<Home />}/>
             <Route path="sign" element={<Signup />}/>
             <Route path="login" element={<Login />}/>
+            <Route path="loginn" element={<Login_new />}/>
             <Route path="Live" element={<LiveForm />}/>
           </Route>
           <Route path="user" element={<User />}>
