@@ -1,11 +1,14 @@
-const {Schema,model} = require('../connection');
+const { Schema, model, Types} = require("../connection");
 
-const myschema = new Schema({
-    name : String,
-    email : String,
-    password : String,
-    avatar: String,
-    createdAt: Date
+const mySchema = new Schema ({
+    title : String,
+    heading: String,
+    description : String,
+    data : Object,
+    user : { type: Types.ObjectId, ref: "users"},
+    dbType: String,
+    dbSrc: String,
+    createdAt : Date,
+    lastUpdate : Date
 });
-
-module.exports = model('form',myschema);
+module.exports = model("form", mySchema);
