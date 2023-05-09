@@ -6,7 +6,7 @@ import User from './components/user';
 import Home from './components/main/Home';
 import Signup from './components/main/Signup';
 import Login from './components/main/Login';
-import Navbar from './components/main/Navbar';
+// import Navbar from './components/main/Navbar';
 import LiveForm from './components/main/LiveForm';
 import EditForm from './components/user/EditForm';
 import ManageForm from './components/user/ManageForm';
