@@ -1,9 +1,12 @@
 import { useFormik } from 'formik';
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 
 const Login = () => {
+
+  const navigate = useNavigate();
 
 	const loginForm = useFormik({
 		initialValues: {
@@ -27,6 +30,15 @@ const Login = () => {
 					title: 'Sucess',
 					text: 'Logged in Successfully'
 				});
+        const data = await res.json();
+        if(data.role === 'admin'){
+          sessionStorage.setItem('admin', JSON.stringify(data));
+          navigate('/admin');
+        }else{
+          sessionStorage.setItem('user', JSON.stringify(data));
+          navigate('/user/ManageForm');
+        }
+
 			} else {
 				Swal.fire({
 					icon: 'error',
