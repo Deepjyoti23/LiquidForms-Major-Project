@@ -28,3 +28,8 @@
   color: rgb(3 4 110) !important;
 }
 
+.prod-img{
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
