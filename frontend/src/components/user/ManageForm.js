@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { toast } from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ManageForm = () => {
 
@@ -136,6 +136,9 @@ const ManageForm = () => {
       <div className='d-flex align-items-center pt-4 mb-2'style={{color:'#F50057',fontFamily:"Roboto"}}>
         <img src="/undraw_control_panel_re_y3ar.png" height={100} alt="" />
         <h2 className='fw-bold'>Manage Your Forms</h2>
+        <button className='btn btn-lg btn-primary' onClick={createNewForm}>
+            Create new form
+        </button>
       </div>
     </div>
     {displayForms()}

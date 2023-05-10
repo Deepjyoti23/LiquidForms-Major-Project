@@ -4,8 +4,8 @@ const app = express();
 const port = 5000;
 
 const userRouter = require('./routers/userRouter');
-const userRouter1 = require('./routers/formRouter');
-const userRouter2 = require('./routers/util');
+const formRouter = require('./routers/formRouter');
+const utilRouter = require('./routers/util');
 
 const cors = require('cors');
 
@@ -17,6 +17,8 @@ app.use(express.json());
 
 //middleware
 app.use('/user', userRouter);
+app.use('/form', formRouter);
+app.use('/util', utilRouter);
 
 
 app.get('/', (req, res ) => {

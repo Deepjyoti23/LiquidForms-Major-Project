@@ -31,7 +31,7 @@ function App() {
             <Route path="Live" element={<LiveForm />}/>
           </Route>
           <Route path="user" element={<User />}>
-            <Route path="EditForm" element={<EditForm />}/>
+            <Route path="editform/:id" element={<EditForm />}/>
             <Route path="ManageForm" element={<ManageForm />}/>
             <Route path="UserProfile" element={<UserProfile />}/>
           </Route>
