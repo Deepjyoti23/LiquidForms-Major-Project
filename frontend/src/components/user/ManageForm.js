@@ -80,6 +80,55 @@ const ManageForm = () => {
     navigate("/user/editform/" + data._id);
   };
 
+  const displayForms = () => {
+    if (!loading && formList)
+      return formList.map((form) => (
+        <div className="col-sm-4 col-md-3 mb-3">
+          <div
+            className="card h-100 theme-accent-back"
+            
+          >
+            <div className="card-body">
+              <div className="d-flex align-items-center">
+                <img src="add-btn-image.png" className="d-block me-2" style={{height: 40}} alt="" />
+              <p className="h2">{form.title}</p>
+              </div>
+              <p
+                className="card-text mt-2"
+                // style={{ height: 50 }}
+                data-mdb-toggle="tooltip"
+                title={form.description}
+              >
+                {form.description ? (
+                  form.description.substring(0, 80) + "..."
+                ) : (
+                  'No Description'
+                )}
+              </p>
+              
+            </div>
+            <div className="card-footer">
+            <Link
+                to={"/user/editform/" + form._id}
+                className="btn btn-primary m-2"
+              >
+                <i class="fas fa-pen-alt "></i>
+              </Link>
+              <button
+                className="btn btn-danger"
+                onClick={() => {
+                  deleteForm(form._id);
+                }}
+              >
+                <i className="fas fa-trash" />
+              </button>
+            </div>
+          </div>
+        </div>
+      ));
+    else return <h1>Loading...</h1>;
+  };
+
   return (
     <div className="container d-flex">
     <div className='row'>
@@ -89,7 +138,8 @@ const ManageForm = () => {
         <h2 className='fw-bold'>Manage Your Forms</h2>
       </div>
     </div>
-    <div className="row row-cols-1 row-cols-md-4 g-4">
+    {displayForms()}
+    {/* <div className="row row-cols-1 row-cols-md-4 g-4">
   <div className="col">
     <div className="card h-100">
       <img
@@ -142,61 +192,7 @@ const ManageForm = () => {
       </div>
     </div>
   </div>
-</div>
-    <div className="row row-cols-1 row-cols-md-4 g-4">
-  <div className="col">
-    <div className="card h-100">
-      <img
-        src="https://i.pinimg.com/564x/02/a2/0f/02a20f358623bc94240154c098501dfb.jpg"
-        className="card-img-top"
-        alt="Event"
-      />
-      <div className="card-body">
-        <h5 className="card-title">Product order</h5>
-        
-      </div>
-    </div>
-  </div>
-  <div className="col">
-    <div className="card h-100">
-      <img
-        src="https://corp.ezetap.com/uploads/blogs/Blog-1052x621-1_(1).jpg"
-        className="card-img-top"
-        alt="Doctor"
-      />
-      <div className="card-body">
-        <h5 className="card-title">Payment Form</h5>
-        
-      </div>
-    </div>
-  </div>
-  <div className="col">
-    <div className="card h-100">
-      <img
-        src="https://startquestion.staginglab.pro/wp-content/uploads/2022/01/flat-feedback-concept-with-devices_23-2148959887-1.jpg"
-        className="card-img-top"
-        alt="School"
-      />
-      <div className="card-body">
-        <h5 className="card-title">Feedback Form </h5>
-        
-      </div>
-    </div>
-  </div>
-  <div className="col">
-    <div className="card h-100">
-      <img
-        src="https://i.pinimg.com/736x/f8/a7/01/f8a70144eb881afe78df0164e657e966.jpg"
-        className="card-img-top"
-        alt="Restaurant"
-      />
-      <div className="card-body">
-        <h5 className="card-title">Job Application</h5>
-        
-      </div>
-    </div>
-  </div>
-</div>
+</div> */}
 
   </div>
   
