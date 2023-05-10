@@ -69,9 +69,9 @@ const Navbar2 = () => {
           </NavLink>
             <NavLink to=" ">
 
-          <button type="button" className="btn btn-lg fw-bold" style={{backgroundColor:"greenyellow"}}>
-            {/* <img src="https://i.pinimg.com/564x/b5/ed/5b/b5ed5b26d891fb193c674aa48de70b14.jpg" alt="" /> */}
-          <i className="fas fa-plus-square  p-2  "></i>
+          <button type="button" className="btn btn-lg fw-bold " style={{backgroundColor:"greenyellow"}}>
+            <img className='pe-1' src="https://i.pinimg.com/564x/9d/08/cc/9d08cc2022b1d219c5cc54ac8d8ebe31.jpg"height={30} width={35} alt="" style={{borderRadius:"100px"}}/>
+          {/* <i className="fas fa-plus-square  p-2  "></i> */}
             Create New Form
           </button>
             </NavLink>
