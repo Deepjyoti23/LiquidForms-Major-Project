@@ -12,6 +12,7 @@ import EditForm from './components/user/EditForm';
 import ManageForm from './components/user/ManageForm';
 import UserProfile from './components/user/UserProfile';
 import Login_new from './components/main/Login_new';
+import { Toaster } from 'react-hot-toast';
 // import Navbar2 from './components/user/Navbar2';
 
 
@@ -19,6 +20,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
+      <Toaster position='top-right' />
         <Routes>
         <Route path='/' element={<Navigate to='/main/home' /> } />
           <Route path="main" element={<Main />}>

@@ -12,14 +12,14 @@ const Navbar3 = () => {
       {/* Navbar brand */}
       <a className="navbar-brand me-2" href="https://mdbgo.com/">
         <img
-          src="/form.png"
-          height={40}
+          src="/form (1).png"
+          height={50}
           alt="Liquid Forms"
           loading="lazy"
           style={{ marginTop: "-1px" }}
         />
         <div>
-          <h5 className='d-block m-auto align-item-center liquid-font' style={{color:"rgb(3 4 110)"}}>Liquid Forms</h5>
+          <h5 className='d-block m-auto align-item-center liquid-font fw-bold' style={{color:"rgb(3 4 110)"}}>Liquid Forms</h5>
         </div>
       </a>
       {/* Toggle button */}
@@ -63,13 +63,13 @@ const Navbar3 = () => {
         <div className="d-flex align-items-center">
             <NavLink to="/main/login">
 
-          <button type="button" className="btn btn-link px-3 me-2">
+          <button type="button" className="btn btn-link px-3 me-2 fw-bold">
             Login
           </button>
             </NavLink>
             <NavLink to="/main/sign">
 
-          <button type="button" className="btn btn-primary me-3">
+          <button type="button" className="btn me-3 fw-bold text-white" style={{backgroundColor:"rgb(2 2 88)"}}>
             Sign up for free
           </button>
             </NavLink>

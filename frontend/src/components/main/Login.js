@@ -33,8 +33,8 @@ const Login = () => {
         const data = await res.json();
         if(data.role === 'admin'){
           sessionStorage.setItem('admin', JSON.stringify(data));
-          navigate('/admin');
         }else{
+          navigate('/user/ManageForm');
           sessionStorage.setItem('user', JSON.stringify(data));
           navigate('/user/ManageForm');
         }
