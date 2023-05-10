@@ -1,6 +1,82 @@
 import React from 'react'
 
 const ManageForm = () => {
+
+  const [currentUser, setCurrentUser] = useState(
+    JSON.parse(sessionStorage.getItem("user"))
+  );
+  const [formList, setFormList] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const getDataFromBackend = async () => {
+    setLoading(true);
+    const response = await fetch(
+      "http://localhost:5000/form/getbyuser/" + currentUser._id
+    );
+
+    const data = await response.json();
+    console.log("Listforms ****" + data);
+    setFormList(data);
+    setLoading(false);
+  };
+
+  const deleteForm = async (id) => {
+    console.log("id user" + id);
+    const response = await fetch("http://localhost:5000/form/delete/" + id, {
+      method: "DELETE",
+    });
+    console.log(response.status);
+    getDataFromBackend();
+    toast.success("Form Deleted 😎");
+  };
+
+  useEffect(() => {
+    getDataFromBackend();
+  }, []);
+
+  const createNewForm = async () => {
+    const formdata = {
+      title: "Untitled Form",
+      heading: "",
+      description: "",
+      data: {
+        questions: [
+          {
+            name: "",
+            answer: "",
+            type: "",
+            options: [{ label: "Untitled Option", checked: false }],
+            correct: "",
+            mark: 0,
+          },
+        ],
+        confirmationMsg: "",
+        isQuiz: false,
+        limitResponses: false,
+        dbType: "",
+        dbSrc: null,
+        styles: {},
+      },
+      user: currentUser._id,
+      createdAt: new Date(),
+      lastUpdate: new Date(),
+    };
+
+    console.log(formdata);
+    const response = await fetch("http://localhost:5000/form/add", {
+      method: "POST",
+      body: JSON.stringify(formdata),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await response.json();
+    // console.log(data);
+    navigate("/user/editform/" + data._id);
+  };
+
   return (
     <div className="container d-flex">
     <div className='row'>
