@@ -58,14 +58,6 @@ const Login = () => {
           className="card"style={{ borderRadius: 25 }}>
           <div className="row g-0 ">
             <div className="col-md-7 col-lg-7 d-none d-md-block" style={{backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: "url('https://cdn.wedevs.com/uploads/2019/09/455.-How-should-a-form-builder-plugin-work-in-2019.png')"}}>
-              {/* <img
-                src="https://cdn.wedevs.com/uploads/2019/09/455.-How-should-a-form-builder-plugin-work-in-2019.png"
-                alt="login form"
-                height={300}
-                width={450}
-                className=" logo "
-                style={{ borderRadius: "1rem 0 0 1rem" }}
-              /> */}
             </div>
             <div className="col-md-5 col-lg-5 d-flex align-items-center">
               <div

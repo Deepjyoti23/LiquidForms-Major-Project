@@ -1,51 +1,82 @@
+import { useFormik } from 'formik';
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Login_new = () => {
+
+  const navigate = useNavigate();
+
+	const loginForm = useFormik({
+		initialValues: {
+			email: '',
+			password: ''
+		},
+
+		onSubmit: async (values) => {
+			console.log(values);
+
+			const res = await fetch('http://localhost:5000/user/authenticate', {
+				method : 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(values)
+			});
+			if (res.status === 200) {
+				Swal.fire({
+					icon: 'success',
+					title: 'Sucess',
+					text: 'Logged in Successfully'
+				});
+        const data = await res.json();
+        if(data.role === 'admin'){
+          sessionStorage.setItem('admin', JSON.stringify(data));
+        }else{
+          navigate('/user/ManageForm');
+          sessionStorage.setItem('user', JSON.stringify(data));
+          navigate('/user/ManageForm');
+        }
+
+			} else {
+				Swal.fire({
+					icon: 'error',
+					title: 'Error',
+					text: 'Invalid Credentials'
+				});
+			}
+		}
+	})
+
   return (
-    <>
+<>
   {/* Button trigger modal */}
   <button
     type="button"
     className="btn btn-primary"
     data-mdb-toggle="modal"
-    data-mdb-target="#exampleModal"
+    data-mdb-target="#staticBackdrop2"
   >
-    Launch modal login form
+    Launch modal register form
   </button>
   {/* Modal */}
-  <div
-    className="modal fade"
-    id="exampleModal"
+  <div className="modal fade"
+    id="staticBackdrop2"
     tabIndex={-1}
-    aria-labelledby="exampleModalLabel1"
+    aria-labelledby="exampleModalLabel2"
     aria-hidden="true"
   >
-    <div className="modal d-flex justify-content-center">
-      <div className="modal- w-100">
-        {/* <div className="modal-header"> */}
-          <button
-            type="button"
-            className="btn-close"
-            data-mdb-dismiss="modal"
-            aria-label="Close"
-          />
-        {/* </div> */}
-        <div className="modal-body p-4">
-        <div className="container py-5 h-90">
+    <div className="modal-dialog vh-100  modal-xl modal-dialog-centered d-flex justify-content-center" >
+      
+
+       <div className="modal-body ">
+       <div className="container py-5 h-90">
     <div className="row d-flex justify-content-center align-items-center h-100">
-      <div className="col col-xl-9">
+      <div className="col col-xl-11">
         <div
           className="card"style={{ borderRadius: 25 }}>
           <div className="row g-0 ">
             <div className="col-md-7 col-lg-7 d-none d-md-block" style={{backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: "url('https://cdn.wedevs.com/uploads/2019/09/455.-How-should-a-form-builder-plugin-work-in-2019.png')"}}>
-              {/* <img
-                src="https://cdn.wedevs.com/uploads/2019/09/455.-How-should-a-form-builder-plugin-work-in-2019.png"
-                alt="login form"
-                height={300}
-                width={450}
-                className=" logo "
-                style={{ borderRadius: "1rem 0 0 1rem" }}
-              /> */}
             </div>
             <div className="col-md-5 col-lg-5 d-flex align-items-center">
               <div
@@ -53,7 +84,7 @@ const Login_new = () => {
                
               >
                 {/* <div class="card p-4" > */}
-                <form >
+                <form onSubmit={loginForm.handleSubmit}>
                   <div className="d-flex align-items-center mb-2 ">
                     <img src="/form.png" alt="" height={140} className='d-block m-auto '/>
                   </div>
@@ -69,7 +100,8 @@ const Login_new = () => {
                     <input
                       type="email"
                       id="email"
-                      
+                      onChange={loginForm.handleChange}
+											value={loginForm.values.email}
                       className="form-control form-control-lg"
                     />
                     <label className="form-label" htmlFor="">
@@ -80,6 +112,8 @@ const Login_new = () => {
                     <input
                       type="password"
                       id="password"
+                      onChange={loginForm.handleChange}
+											value={loginForm.values.password}
                       className="form-control form-control-lg"
                     />
                     <label className="form-label" htmlFor="">
@@ -132,12 +166,15 @@ const Login_new = () => {
       </div>
     </div>
   </div>
-        </div>
-        </div>
+     
+  
       </div>
-    </div>
+  </div>
+  </div>
+  {/* </div> */}
   {/* Modal */}
 </>
+
 
   )
 }

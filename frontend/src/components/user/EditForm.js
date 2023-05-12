@@ -58,7 +58,7 @@ import MongoDB from "./dbForms/MongoDB";
 // import './addForm.css';
 
 const EditForm = () => {
-  const url = app_config.api_url;
+  const url = app_config.apiUrl;
   const navigate = useNavigate();
 
   const [showConfMsg, setShowConfMsg] = useState(false);
@@ -98,7 +98,9 @@ const EditForm = () => {
   // console.log(formid);
 
   const [bgImages, setBgImages] = useState([
-    "https://wallpaperaccess.com/full/643353.png",
+    "https://i.pinimg.com/736x/c7/11/63/c71163d4d1cf8493b8b7dd85d99e80d2.jpg",
+    "https://haplun.in/uploads/product_images/large/1608647893_5417673171.webp",
+    "https://cdn.diys.com/wp-content/uploads/2021/04/DIY-Birthday-decor-1.jpg",
     "https://images.unsplash.com/photo-1616088410192-d1b123712994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bWluaW1hbCUyMGJhY2tncm91bmR8ZW58MHx8MHx8&w=1000&q=80",
     "https://wallpaperaccess.com/full/2906429.jpg",
     "https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000",

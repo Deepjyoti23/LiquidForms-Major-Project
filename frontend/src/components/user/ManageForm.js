@@ -136,9 +136,14 @@ const ManageForm = () => {
       <div className='d-flex align-items-center pt-4 mb-2'style={{color:'#F50057',fontFamily:"Roboto"}}>
         <img src="/undraw_control_panel_re_y3ar.png" height={100} alt="" />
         <h2 className='fw-bold'>Manage Your Forms</h2>
-        <button className='btn btn-lg btn-primary' onClick={createNewForm}>
+        {/* <button className='btn btn-lg btn-primary' onClick={createNewForm}>
             Create new form
-        </button>
+        </button> */}
+        <button type="button" className="btn btn-lg fw-bold " style={{backgroundColor:"greenyellow"}} onClick={createNewForm} >
+            <img className='pe-1' src="https://i.pinimg.com/564x/9d/08/cc/9d08cc2022b1d219c5cc54ac8d8ebe31.jpg"height={30} width={35} alt="" style={{borderRadius:"100px"}}/>
+          {/* <i className="fas fa-plus-square  p-2  "></i> */}
+            Create New Form
+          </button>
       </div>
     </div>
     {displayForms()}

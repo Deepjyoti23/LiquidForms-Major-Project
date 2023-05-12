@@ -5,6 +5,7 @@ const port = 5000;
 
 const userRouter = require('./routers/userRouter');
 const formRouter = require('./routers/formRouter');
+const responseRouter = require('./routers/responseRouter');
 const utilRouter = require('./routers/util');
 
 const cors = require('cors');
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use('/user', userRouter);
 app.use('/form', formRouter);
 app.use('/util', utilRouter);
+app.use('/response', responseRouter);
 
 
 app.get('/', (req, res ) => {
