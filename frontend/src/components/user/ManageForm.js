@@ -139,8 +139,12 @@ const ManageForm = () => {
         {/* <button className='btn btn-lg btn-primary' onClick={createNewForm}>
             Create new form
         </button> */}
-        <button type="button" className="btn btn-lg fw-bold " style={{backgroundColor:"greenyellow"}} onClick={createNewForm} >
-            <img className='pe-1' src="https://i.pinimg.com/564x/9d/08/cc/9d08cc2022b1d219c5cc54ac8d8ebe31.jpg"height={30} width={35} alt="" style={{borderRadius:"100px"}}/>
+      </div>
+      <div className='d-flex justify-content-end '>
+
+        <button type="button" className="btn btn-lg fw-bold  btn-primary"  onClick={createNewForm} >
+            {/* <img className='pe-1' src="https://i.pinimg.com/564x/9d/08/cc/9d08cc2022b1d219c5cc54ac8d8ebe31.jpg"height={30} width={35} alt="" style={{borderRadius:"100px"}}/> */}
+            <i class="fas fa-plus-circle pe-2 "></i>
           {/* <i className="fas fa-plus-square  p-2  "></i> */}
             Create New Form
           </button>
