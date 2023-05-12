@@ -1,15 +1,18 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import './navbar.css'
 
 const Navbar3 = () => {
   return (
     <div>
-        <>
+        <div>
   {/* Navbar */}
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <nav className="navbar navbar-expand-lg nav-log-bg pt-4 pb-4"  >
     {/* Container wrapper */}
-    <div className="container">
+    <div className="container bg-white">
       {/* Navbar brand */}
+      <div>
+
       <a className="navbar-brand me-2" href="https://mdbgo.com/">
         <img
           src="/form (1).png"
@@ -18,10 +21,12 @@ const Navbar3 = () => {
           loading="lazy"
           style={{ marginTop: "-1px" }}
         />
+       
         <div>
           <h5 className='d-block m-auto align-item-center liquid-font fw-bold' style={{color:"rgb(3 4 110)"}}>Liquid Forms</h5>
         </div>
       </a>
+      </div>
       {/* Toggle button */}
       <button
         className="navbar-toggler"
@@ -81,7 +86,7 @@ const Navbar3 = () => {
     {/* Container wrapper */}
   </nav>
   {/* Navbar */}
-</>
+</div>
 
     </div>
   )

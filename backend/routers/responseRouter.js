@@ -1,5 +1,5 @@
 const req = require('express/lib/request');
-const Model = require('../models/formModel');
+const Model = require('../models/responseModel');
 const {Router} = require('express');
 const router = Router();
 

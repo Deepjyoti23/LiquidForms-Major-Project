@@ -1,19 +1,20 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import './navbar.css'
 
 const Navbar2 = () => {
 	return (
 		<div>
         <>
   {/* Navbar */}
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <nav className="navbar navbar-expand-lg navbar-light nav-log-bg pt-3 pb-3">
+    <div className="container bg-white">
     {/* Container wrapper */}
-    <div className="container">
       {/* Navbar brand */}
-      <a className="navbar-brand me-2" href="https://mdbgo.com/">
+      <a className="navbar-brand me-2" href="#">
         <img
           src="/form.png"
-          height={40}
+          height={50}
           alt="Liquid Forms"
           loading="lazy"
           style={{ marginTop: "-1px" }}
@@ -69,10 +70,8 @@ const Navbar2 = () => {
           </NavLink>
             <NavLink to=" ">
 
-          <button type="button" className="btn btn-lg fw-bold " style={{backgroundColor:"greenyellow"}} >
-            <img className='pe-1' src="https://i.pinimg.com/564x/9d/08/cc/9d08cc2022b1d219c5cc54ac8d8ebe31.jpg"height={30} width={35} alt="" style={{borderRadius:"100px"}}/>
-          {/* <i className="fas fa-plus-square  p-2  "></i> */}
-            Create New Form
+          <button type="button" className="btn me-3 fw-bold text-white" style={{backgroundColor:"rgb(2 2 88)"}}>
+            Sign up for Free
           </button>
             </NavLink>
           

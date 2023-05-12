@@ -21,7 +21,7 @@ const Preview = () => {
   const [formDetails, setFormDetails] = useState(null);
   const [formLoading, setFormLoading] = useState(false);
   const [response, setResponse] = useState([]);
-  const url = app_config.api_url;
+  const url = app_config.apiUrl;
   const navigate = useNavigate();
 
   const getformById = async () => {
@@ -61,17 +61,17 @@ const Preview = () => {
 
   const createSingleResponse = response => {
     const obj = {};
-    for(let ques of response){
-        obj[ques.name] = ques.answer;
+    for (let ques of response) {
+      obj[ques.name] = ques.answer;
     }
     return obj;
-}
+  }
 
   const savetoMongoDB = async (data) => {
-    const res = await fetch(url+'/util/save-res-to-mongo', {
+    const res = await fetch(url + '/util/save-res-to-mongo', {
       method: "POST",
       body: JSON.stringify({
-        formid : formDetails._id, resObj : data
+        formid: formDetails._id, resObj: data
       }),
       headers: {
         "Content-Type": "application/json",
@@ -84,7 +84,7 @@ const Preview = () => {
 
   const submitResponse = async () => {
 
-    if(formDetails.dbType === "MongoDB") savetoMongoDB(createSingleResponse(response));
+    if (formDetails.dbType === "MongoDB") savetoMongoDB(createSingleResponse(response));
 
     const res = await fetch(url + "/response/add", {
       method: "POST",
@@ -98,7 +98,7 @@ const Preview = () => {
         "Content-Type": "application/json",
       },
     });
-    if(res.status === 200){
+    if (res.status === 200) {
       Swal.fire({
         title: "Success",
         text: "Response Submitted",
@@ -130,8 +130,8 @@ const Preview = () => {
       );
     } else if (question.type === "radio") {
       return (
-        <FormControl>
-          
+        <FormControl className="ms-3 mt-0">
+
           <RadioGroup value={question.answer} onChange={(e, v) => updateForm("text", v, ques_i)}>
             {question.options.map((option, opt_i) => (
               <FormControlLabel
@@ -145,7 +145,7 @@ const Preview = () => {
       );
     } else if (question.type === "checkbox") {
       return (
-        <FormControl component="fieldset" sx={{ m: 3 }} variant="standard">
+        <FormControl component="fieldset" className="ms-3"  variant="standard">
           <FormLabel component="legend">Select all that apply</FormLabel>
           <FormGroup>
             {question.options.map((option, opt_i) => (
@@ -167,27 +167,27 @@ const Preview = () => {
 
   const renderForm = () => {
     return !formLoading && formDetails ? (
-      <>
-        <p className="h2 my-3">{formDetails.heading}</p>
-        <p>{formDetails.description}</p>
-
+      <div className="card ">
+        <p className="h2 my-3 ps-3">{formDetails.heading}</p>
+        <p className="h6 ps-3">{formDetails.description}</p>
+           <hr />
         {response.map((question, ques_i) => (
-          <div className="mb-4" key={ques_i}>
-            <div className="card-body">
+          <div className="" key={ques_i}>
+            <div className="card-body ">
               <p className="h4">{question.name}</p>
             </div>
             {renderAnswer(question, ques_i)}
           </div>
         ))}
-      </>
+      </div>
     ) : (
       "Form Loading"
     );
   };
 
   return (
-    <div className="">
-      <div className="container py-5">
+    <div style={{backgroundColor:"#f0fbff"}}>
+      <div className="col-8 mx-auto py-5">
         {/* {topHeader} */}
         <div className="card mb-2">
           <div className="card-body">
@@ -203,7 +203,7 @@ const Preview = () => {
         </div>
 
         {renderForm()}
-        <button className="btn btn-primary" onClick={submitResponse}>Submit</button>
+        <button className="btn btn-primary mt-2" onClick={submitResponse}>Submit</button>
       </div>
     </div>
   );

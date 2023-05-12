@@ -521,7 +521,7 @@ const EditForm = () => {
                   <Visibility />
                 </IconButton>
               </Tooltip>
-              <button className="btn btn-primary m-2" onClick={updateForm}>
+              <button className="btn btn-primary m-2 " onClick={updateForm}>
                 Save Form
               </button>
              
@@ -627,7 +627,7 @@ const EditForm = () => {
                 />
               </ListItem>
             )}
-            <ListItem>
+            {/* <ListItem> */}
               <ListItem>
                 <ListItemIcon>
                   <Quiz />
@@ -635,8 +635,8 @@ const EditForm = () => {
                 <ListItemText primary="Make this Form a Quiz" />
                 <Switch />
               </ListItem>
-            </ListItem>
-            <ListItem>
+            {/* </ListItem> */}
+            {/* <ListItem> */}
               <ListItem>
                 <ListItemIcon>
                   <Forum />
@@ -644,7 +644,7 @@ const EditForm = () => {
                 <ListItemText primary="Limit One Response" />
                 <Switch />
               </ListItem>
-            </ListItem>
+            {/* </ListItem> */}
               <ListItemButton onClick={e => setConfMsgOpen(!confMsgOpen)}>
                 <ListItemIcon>
                   <ThumbUpAltRounded />
@@ -683,8 +683,7 @@ const EditForm = () => {
                   >
                     <MenuItem value={1}>CSV File</MenuItem>
                     <MenuItem value={2}>MongoDB</MenuItem>
-                    <MenuItem value={3}>MySql</MenuItem>
-                  </Select>
+                   </Select>
                 </FormControl>
                 {/* <Switch /> */}
               </ListItem>

@@ -50,8 +50,8 @@ const Login = () => {
 	})
 
   return (
-    <div className=" vh-100 " style={{backgroundImage:"url(https://cdn.cbeditz.com/cbeditz/large/11625065457gxal4eswybfcu4gjh3m8lzq2hwdu5an4zslf4az4wbba9bxwui4yuy9dhozosejtvalc5w7cszl6aymprc6jcix4jhr5quycwdzr.jpg)", backgroundSize: 'cover',backdropFilter:'blur(50px)', backdropFilter:"contrast(100px)"}}>
-  <div className="container py-5 h-90">
+    <div className=" vh-100 " style={{backgroundColor:"#f0fbff"}} >
+  <div className="container py-4 h-90">
     <div className="row d-flex justify-content-center align-items-center h-100">
       <div className="col col-xl-9">
         <div
@@ -70,7 +70,7 @@ const Login = () => {
                     <img src="/form.png" alt="" height={140} className='d-block m-auto '/>
                   </div>
                   <div>
-                    <h4 className="h2 liquid-font mb-3 d-flex justify-content-center" style={{color:"rgb(2 2 88)"}}>Liquid Forms</h4>
+                    <h4 className="h2 liquid-font mb-3 d-flex justify-content-center fw-bold" style={{color:"rgb(2 2 88)"}}>Liquid Forms</h4>
                   </div>
                   <div>
                     <h5 className=" mb-1 pb-2" style={{ letterSpacing: 1 }}>

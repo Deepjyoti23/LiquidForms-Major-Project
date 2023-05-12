@@ -6,7 +6,7 @@
   margin-top: 150px;
 }
 
-.card-log-bg,.nav-log-bg,.card-sign-bg{
+.card-log-bg,.card-sign-bg{
   /* background-color: #cbf2fa  */
   background-image: linear-gradient(45deg,#9fdbfe,#b5d9f4);
   /* background-color: hsla(206, 92%, 77%, 0.81); */
