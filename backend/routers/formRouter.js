@@ -62,7 +62,7 @@ router.post('/add', (req,res) => {
     })
     
     router.put('/update/:id', (req,res) => {
-        Model.findByIdAndUpdate(req.params.id, req.body)
+        Model.findByIdAndUpdate(req.params.id, req.body, {new : true})
         .then((result) => {
             res.json(result);
         }).catch((err) => {

@@ -485,6 +485,27 @@ const EditForm = () => {
     }
   }
 
+  const updateFormData = async (data) => {
+    const res = await fetch(url + "/form/update/" + formDetails._id, {
+      method: "PUT",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const resData = await res.json();
+    console.log(resData);
+    setFormDetails(resData);
+  }
+
+  useEffect(() => {
+    updateFormData({ background: {type : 'image' , value: selBgImg } });
+  }, [selBgImg]);
+
+  useEffect(() => {
+    updateFormData({ background: {type : 'color' , value: selBgColor } });
+  }, [selBgColor]);
+
   return (
     <div
       className="main-form main-form-bg"
@@ -496,7 +517,7 @@ const EditForm = () => {
           }
       }
     >
-      <div className="col-md-8 mx-auto pt-4">
+      <div className="col-md-8 mx-auto pt-4" style={{minHeight: '100vh'}}>
         {/* <div className="container"> */}
         <Card className="my-2">
           <CardContent>

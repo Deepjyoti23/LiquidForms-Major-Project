@@ -72,12 +72,13 @@ const LiveForm = () => {
         "Content-Type": "application/json",
       },
     });
-    if(res.status === 200){
+    if (res.status === 200) {
       Swal.fire({
         title: "Success",
         text: "Response Submitted",
         icon: "success",
-      })
+      });
+      window.location.replace("/thankyou");
     }
   };
 
@@ -105,8 +106,10 @@ const LiveForm = () => {
     } else if (question.type === "radio") {
       return (
         <FormControl>
-          
-          <RadioGroup value={question.answer} onChange={(e, v) => updateForm("text", v, ques_i)}>
+          <RadioGroup
+            value={question.answer}
+            onChange={(e, v) => updateForm("text", v, ques_i)}
+          >
             {question.options.map((option, opt_i) => (
               <FormControlLabel
                 value={option.label}
@@ -139,6 +142,14 @@ const LiveForm = () => {
     }
   };
 
+  const setBackground = () => {
+    if (formDetails && formDetails.background) {
+      return formDetails.background.type === "color"
+        ? formDetails.background.value
+        : "url('" + formDetails.background.value + "')";
+    }
+  };
+
   const renderForm = () => {
     return !formLoading && formDetails ? (
       <>
@@ -160,7 +171,10 @@ const LiveForm = () => {
   };
 
   return (
-    <div className="">
+    <div
+      className=""
+      style={{ background: setBackground(), minHeight: "100vh", backgroundSize: 'cover', backgroundAttachment: 'fixed' }}
+    >
       <div className="container py-5">
         {/* {topHeader} */}
         <div className="card mb-2">
@@ -175,9 +189,12 @@ const LiveForm = () => {
             </Tooltip>
           </div>
         </div>
-
-        {renderForm()}
-        <button className="btn btn-primary" onClick={submitResponse}>Submit</button>
+        <div className="card mb-2">
+          <div className="card-body">{renderForm()}</div>
+        </div>
+        <button className="btn btn-primary" onClick={submitResponse}>
+          Submit
+        </button>
       </div>
     </div>
   );

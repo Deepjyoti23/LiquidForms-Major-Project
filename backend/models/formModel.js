@@ -9,6 +9,7 @@ const mySchema = new Schema ({
     dbType: String,
     dbSrc: String,
     createdAt : Date,
+    background: Object,
     lastUpdate : Date
 });
 module.exports = model("form", mySchema);

@@ -48,7 +48,7 @@ import {
               labelId="emails"
               id="demo-simple-select"
               value={selResponse}
-              label="Age"
+              label="Select Response"
               onChange={(e) => setSelResponse(e.target.value)}
             >
               {responseList.map((response, index) => (
@@ -57,7 +57,7 @@ import {
             </Select>
           </FormControl>
           <Divider className="my-3" />
-          {selResponse && (
+          {selResponse !==null && (
             <div>
               <div className="row">
                 <div className="col-md-4 ">

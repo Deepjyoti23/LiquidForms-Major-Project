@@ -15,6 +15,7 @@ import Login_new from './components/main/Login_new';
 import { Toaster } from 'react-hot-toast';
 import Preview from './components/main/Preview';
 import Home2 from './components/main/Home2';
+import ThankYou from './components/main/ThankYou';
 // import Navbar2 from './components/user/Navbar2';
 
 
@@ -39,6 +40,7 @@ function App() {
             <Route path="UserProfile" element={<UserProfile />}/>
           </Route>
             <Route path="liquidform/:formid" element={<LiveForm />}/>
+            <Route path="thankyou" element={<ThankYou />}/>
         </Routes>
       </BrowserRouter>
     </div>
