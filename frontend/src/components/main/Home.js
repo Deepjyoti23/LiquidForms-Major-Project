@@ -3,15 +3,20 @@ import React from 'react'
 const Home = () => {
   return (
     <div>
-        <div className='d-flex justify-content-center'>
+      <div className='' >
+        <div className='d-flex justify-content-center align-items-center '>
+          <img className='mb-3 mt-3' height={100} src="/form.png" alt="" />
+          <h1 className='mb-3'>Liquid Forms</h1>
+        </div>
 
-        <h1>Liquid Forms</h1>
+        <div className='d-flex justify-content-center 'style={{borderBottomLeftRadius:"10"}}>
+        <p className='h3 mb-3'>Customize forms effortlessly with Liquid Forms: Tailor made solutions for your unique needs.</p>
         </div>
-        <div className='d-flex justify-content-center '>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam deserunt ex ad soluta vel debitis et molestiae voluptatum quia assumenda?</p>
-        </div>
+      </div>
         <>
+  <div className='container'>
   {/* Carousel wrapper */}
+
   <div
     id="carouselBasicExample"
     className="carousel slide carousel-fade"
@@ -103,6 +108,7 @@ const Home = () => {
     </button>
   </div>
   {/* Carousel wrapper */}
+  </div>
 </>
 
     </div>

@@ -13,7 +13,7 @@ const Navbar3 = () => {
       {/* Navbar brand */}
       <div>
 
-      <a className="navbar-brand me-2" href="https://mdbgo.com/">
+      <a className="navbar-brand me-2" href="/main/home">
         <img
           src="/form (1).png"
           height={50}

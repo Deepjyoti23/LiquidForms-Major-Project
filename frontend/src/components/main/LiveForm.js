@@ -21,7 +21,7 @@ const LiveForm = () => {
   const [formDetails, setFormDetails] = useState(null);
   const [formLoading, setFormLoading] = useState(false);
   const [response, setResponse] = useState([]);
-  const url = app_config.api_url;
+  const url = app_config.apiUrl;
   const navigate = useNavigate();
 
   const getformById = async () => {

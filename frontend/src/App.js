@@ -14,6 +14,7 @@ import UserProfile from './components/user/UserProfile';
 import Login_new from './components/main/Login_new';
 import { Toaster } from 'react-hot-toast';
 import Preview from './components/main/Preview';
+import Home2 from './components/main/Home2';
 // import Navbar2 from './components/user/Navbar2';
 
 
@@ -26,10 +27,10 @@ function App() {
         <Route path='/' element={<Navigate to='/main/home' /> } />
           <Route path="main" element={<Main />}>
             <Route path="home" element={<Home />}/>
+            <Route path="home2" element={<Home2 />}/>
             <Route path="sign" element={<Signup />}/>
             <Route path="login" element={<Login />}/>
             <Route path="loginn" element={<Login_new />}/>
-            <Route path="liveform/:formid" element={<LiveForm />}/>
             <Route path="preview/:formid" element={<Preview />}/>
           </Route>
           <Route path="user" element={<User />}>
@@ -37,6 +38,7 @@ function App() {
             <Route path="ManageForm" element={<ManageForm />}/>
             <Route path="UserProfile" element={<UserProfile />}/>
           </Route>
+            <Route path="liquidform/:formid" element={<LiveForm />}/>
         </Routes>
       </BrowserRouter>
     </div>
