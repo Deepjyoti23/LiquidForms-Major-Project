@@ -156,9 +156,12 @@ const ManageForm = () => {
           </button>
         </div>
       </div>
-    <div className='d-flex pt-5'>
+    <div className='row pt-5'>
+      <div className='col d-flex'>
+        {displayForms()}
 
-    {displayForms()}
+      </div>
+
     </div>
     
 

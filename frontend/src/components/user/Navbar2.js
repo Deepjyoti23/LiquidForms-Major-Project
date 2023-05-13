@@ -11,7 +11,7 @@ const Navbar2 = () => {
     <div className="container bg-white">
     {/* Container wrapper */}
       {/* Navbar brand */}
-      <a className="navbar-brand me-2" href="#">
+      <a className="navbar-brand me-2" href="/main/home">
         <img
           src="/form.png"
           height={50}

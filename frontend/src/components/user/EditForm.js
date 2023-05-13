@@ -1,5 +1,6 @@
 import {
   Add,
+  CopyAll,
   Delete,
   DynamicForm,
   ExpandLess,
@@ -265,12 +266,12 @@ const EditForm = () => {
     setConfMsg(dbFormData.data.confirmationMsg);
     setIsQuiz();
 
-    if(dbFormData.dbType === "Sheet"){
+    if (dbFormData.dbType === "Sheet") {
       setSelDB(1);
     }
-    else if(dbFormData.dbType === "MongoDB"){
+    else if (dbFormData.dbType === "MongoDB") {
       setSelDB(2);
-    }else if(dbFormData.dbType === "MySQL"){
+    } else if (dbFormData.dbType === "MySQL") {
       setSelDB(3);
     }
   };
@@ -363,70 +364,70 @@ const EditForm = () => {
   const renderCourse = () => {
     return formLoaded
       ? formData.map((question, ques_i) => (
-          <div className="card question-card mb-4" key={ques_i}>
-            <div className="card-body">
-              <div className="row">
-                <div className="col-8">
-                  <TextField
-                    label="Question"
-                    fullWidth
-                    variant="outlined"
-                    value={question.name}
-                    onChange={(e) =>
-                      handleRename("name", e.target.value, ques_i)
-                    }
-                  />
-                </div>
-                <div className="col-4">
-                  {/* <Select options={answerTypes} /> */}
-                  <FormControl fullWidth>
-                    <InputLabel id="answerType-label">Answer Type</InputLabel>
-                    <Select
-                      labelId="answerType-label"
-                      id="answerType"
-                      value={question.type}
-                      label="Answer Type"
-                      onChange={(e) =>
-                        handleRename("type", e.target.value, ques_i)
-                      }
-                    >
-                      {answerTypes.map((type) => {
-                        return (
-                          <MenuItem value={type.value}>{type.label}</MenuItem>
-                        );
-                      })}
-                    </Select>
-                  </FormControl>
-                </div>
+        <div className="card question-card mb-4" key={ques_i}>
+          <div className="card-body">
+            <div className="row">
+              <div className="col-8">
+                <TextField
+                  label="Question"
+                  fullWidth
+                  variant="outlined"
+                  value={question.name}
+                  onChange={(e) =>
+                    handleRename("name", e.target.value, ques_i)
+                  }
+                />
               </div>
-
-              {renderAnswerBox(question, ques_i)}
-              {(question.type === "checkbox" || question.type === "radio") && (
-                <Tooltip title="Add New Option">
-                  <IconButton
-                    color="primary"
-                    className="ms-2"
-                    onClick={(e) => handleAddOption(ques_i)}
+              <div className="col-4">
+                {/* <Select options={answerTypes} /> */}
+                <FormControl fullWidth>
+                  <InputLabel id="answerType-label">Answer Type</InputLabel>
+                  <Select
+                    labelId="answerType-label"
+                    id="answerType"
+                    value={question.type}
+                    label="Answer Type"
+                    onChange={(e) =>
+                      handleRename("type", e.target.value, ques_i)
+                    }
                   >
-                    <Add />
-                  </IconButton>
-                </Tooltip>
-              )}
+                    {answerTypes.map((type) => {
+                      return (
+                        <MenuItem value={type.value}>{type.label}</MenuItem>
+                      );
+                    })}
+                  </Select>
+                </FormControl>
+              </div>
             </div>
-            <div className="card-footer d-flex flex-row-reverse bg-light">
-              <Button variant="outlined" className="ms-3">
-                <i class="fas fa-copy"></i>
-              </Button>
-              <Button
-                variant="outlined"
-                color="error"
-                onClick={(e) => removeQuestion(ques_i)}
-              >
-                <i class="fas fa-trash"></i>
-              </Button>
-            </div>
+
+            {renderAnswerBox(question, ques_i)}
+            {(question.type === "checkbox" || question.type === "radio") && (
+              <Tooltip title="Add New Option">
+                <IconButton
+                  color="primary"
+                  className="ms-2"
+                  onClick={(e) => handleAddOption(ques_i)}
+                >
+                  <Add />
+                </IconButton>
+              </Tooltip>
+            )}
           </div>
-        ))
+          <div className="card-footer d-flex flex-row-reverse bg-light">
+            <Button variant="outlined" className="ms-3">
+              <i class="fas fa-copy"></i>
+            </Button>
+            <Button
+              variant="outlined"
+              color="error"
+              onClick={(e) => removeQuestion(ques_i)}
+            >
+              <i class="fas fa-trash"></i>
+            </Button>
+          </div>
+        </div>
+      ))
       : "Form Loading";
   };
 
@@ -477,9 +478,9 @@ const EditForm = () => {
   };
 
   const showSelDB = () => {
-    if(selDB===1){
+    if (selDB === 1) {
       return <SheetCreator formid={formid} />
-    }else if(selDB===2){
+    } else if (selDB === 2) {
       return <MongoDB formid={formid} dbSrc={formDetails.dbSrc} />
     }
   }
@@ -491,8 +492,8 @@ const EditForm = () => {
         background === 1
           ? { backgroundImage: selBgImg ? `url('${selBgImg}')` : "white" }
           : {
-              backgroundColor: selBgColor ? `${selBgColor}` : "white",
-            }
+            backgroundColor: selBgColor ? `${selBgColor}` : "white",
+          }
       }
     >
       <div className="col-md-8 mx-auto pt-4">
@@ -511,9 +512,27 @@ const EditForm = () => {
                 variant="standard"
                 onChange={(e) => setFormTitle(e.target.value)}
                 value={formTitle}
-                
+
               />
-               <Tooltip title="Preview Form" className="mr-2">
+              <Tooltip title="Copy Form Link" className="mr-2">
+                <IconButton
+                  color="secondary"
+                  onClick={() => {
+                    const formLink = "http://localhost:3000/liquidform/" + formid;
+                    navigator.clipboard.writeText(formLink)
+                      .then(() => {
+                        console.log("Text copied to clipboard successfully.");
+                        window.open(formLink, "_blank");
+                      })
+                      .catch((error) => {
+                        console.error("Error copying text: ", error);
+                      });
+                  }}
+                >
+                  <CopyAll />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Preview Form" className="mr-2">
                 <IconButton
                   color="secondary"
                   onClick={() => navigate("/main/preview/" + formDetails._id)}
@@ -524,7 +543,7 @@ const EditForm = () => {
               <button className="btn btn-primary m-2 " onClick={updateForm}>
                 Save Form
               </button>
-             
+
             </div>
           </CardContent>
         </Card>
@@ -628,65 +647,65 @@ const EditForm = () => {
               </ListItem>
             )}
             {/* <ListItem> */}
-              <ListItem>
-                <ListItemIcon>
-                  <Quiz />
-                </ListItemIcon>
-                <ListItemText primary="Make this Form a Quiz" />
-                <Switch />
-              </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <Quiz />
+              </ListItemIcon>
+              <ListItemText primary="Make this Form a Quiz" />
+              <Switch />
+            </ListItem>
             {/* </ListItem> */}
             {/* <ListItem> */}
-              <ListItem>
-                <ListItemIcon>
-                  <Forum />
-                </ListItemIcon>
-                <ListItemText primary="Limit One Response" />
-                <Switch />
-              </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <Forum />
+              </ListItemIcon>
+              <ListItemText primary="Limit One Response" />
+              <Switch />
+            </ListItem>
             {/* </ListItem> */}
-              <ListItemButton onClick={e => setConfMsgOpen(!confMsgOpen)}>
-                <ListItemIcon>
-                  <ThumbUpAltRounded />
-                </ListItemIcon>
-                <ListItemText primary="Confirmation Message" />
-                {confMsgOpen ? <ExpandLess /> : <ExpandMore />}
-              </ListItemButton>
-              <Collapse in={confMsgOpen} timeout="out" unmountOnExit style={{height: '100%'}}>
+            <ListItemButton onClick={e => setConfMsgOpen(!confMsgOpen)}>
+              <ListItemIcon>
+                <ThumbUpAltRounded />
+              </ListItemIcon>
+              <ListItemText primary="Confirmation Message" />
+              {confMsgOpen ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
+            <Collapse in={confMsgOpen} timeout="out" unmountOnExit style={{ height: '100%' }}>
               <TextField
-                  id="outlined-basic"
-                  label="Message"
-                  variant="outlined"
-                  multiline
-                  rows={4}
-                  fullWidth
-                  value={confMsg}
-                  className="mt-3"
-                  onChange={(e) => setConfMsg(e.target.value)}
-                />
-              </Collapse>
-              <ListItem>
-                <ListItemIcon>
-                  <Storage />
-                </ListItemIcon>
-                {/* <ListItemText primary="Make this Form a Quiz" /> */}
-                <FormControl fullWidth>
-                  <InputLabel id="demo-simple-select-label">
-                    Database Connection
-                  </InputLabel>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={selDB}
-                    label="Select database"
-                    onChange={e => setSelDB(e.target.value)}
-                  >
-                    <MenuItem value={1}>CSV File</MenuItem>
-                    <MenuItem value={2}>MongoDB</MenuItem>
-                   </Select>
-                </FormControl>
-                {/* <Switch /> */}
-              </ListItem>
+                id="outlined-basic"
+                label="Message"
+                variant="outlined"
+                multiline
+                rows={4}
+                fullWidth
+                value={confMsg}
+                className="mt-3"
+                onChange={(e) => setConfMsg(e.target.value)}
+              />
+            </Collapse>
+            <ListItem>
+              <ListItemIcon>
+                <Storage />
+              </ListItemIcon>
+              {/* <ListItemText primary="Make this Form a Quiz" /> */}
+              <FormControl fullWidth>
+                <InputLabel id="demo-simple-select-label">
+                  Database Connection
+                </InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={selDB}
+                  label="Select database"
+                  onChange={e => setSelDB(e.target.value)}
+                >
+                  <MenuItem value={1}>CSV File</MenuItem>
+                  <MenuItem value={2}>MongoDB</MenuItem>
+                </Select>
+              </FormControl>
+              {/* <Switch /> */}
+            </ListItem>
           </List>
           {showSelDB()}
         </TabPanel>
