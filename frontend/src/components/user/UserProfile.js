@@ -13,7 +13,7 @@ const UserProfile = () => {
 
   const updateProfile = async (data) => {
     console.log(data);
-    const res = await fetch(url + "/user/update/"+currentUser._id, {
+    const res = await fetch(url + "/user/update/" + currentUser._id, {
       method: "PUT",
       body: JSON.stringify(data),
       headers: {
@@ -21,11 +21,11 @@ const UserProfile = () => {
       },
     });
     console.log(res.status);
-    const userdata = (await res.json()).result;
+    const userdata = await res.json();
     console.log(userdata);
     setCurrentUser(userdata);
-    sessionStorage.setItem('user', JSON.stringify(userdata));
-  }
+    sessionStorage.setItem("user", JSON.stringify(userdata));
+  };
 
   const uploadProfileImage = (e) => {
     const file = e.target.files[0];
@@ -38,11 +38,10 @@ const UserProfile = () => {
     }).then((res) => {
       if (res.status === 200) {
         console.log("file uploaded");
-        updateProfile({avatar : file.name})
+        updateProfile({ avatar: file.name });
       }
     });
   };
-
 
   const deleteAccount = async () => {
     Swal.fire({
@@ -57,7 +56,7 @@ const UserProfile = () => {
       if (result.isConfirmed) {
         Swal.fire("Deleted!", "Your file has been deleted.", "success");
       }
-    })
+    });
     return;
     const res = await fetch(url + "/user/delete/" + currentUser._id, {
       method: "DELETE",
@@ -70,31 +69,54 @@ const UserProfile = () => {
 
   const profileForm = useFormik({
     initialValues: currentUser,
-    onSubmit: updateProfile
-  })
-
+    onSubmit: updateProfile,
+  });
 
   return (
-    <div style={{backgroundColor:"#f0fbff"}}>
+    <div style={{ backgroundColor: "#f0fbff" }}>
       <div className="container ">
-        <div className="d-flex align-items-center  pt-2 mb-4" style={{color:'rgb(39 5 136)',fontFamily:"cursive"}}>
-          <img src="/userprofile1.png" height={100} alt="userprofile" style={{borderRadius :"100px"}}/>
+        <div
+          className="d-flex align-items-center  pt-2 mb-4"
+          style={{ color: "rgb(39 5 136)", fontFamily: "cursive" }}
+        >
+          <img
+            src="/userprofile1.png"
+            height={100}
+            alt="userprofile"
+            style={{ borderRadius: "100px" }}
+          />
           <h3 className="fw-bold ms-2">My Profile</h3>
         </div>
         <div className="row">
           <div className="col-md-4 mb-4">
             <div className="card mb-4">
               <div className="card-header py-3">
-                
                 <h5 className="mb-0">Summary</h5>
               </div>
               <div className="card-body">
-
-                <img height={200} className="border-rounded d-block m-auto" src={currentUser.avatar?`${url}/${currentUser.avatar}` : '/avatar.webp'} alt="" />
-                <label className="btn btn-outline-secondary w-100 mt-3" htmlFor="upload-image">  <i class="fas fa-pen"></i>&nbsp;Edit </label>
-                <input type="file" hidden onChange={uploadProfileImage} id="upload-image" />
-                <p className="text-center mt-1 text-dark">Welcome
-                  Back</p>
+                <img
+                  style={{ width: "100%" }}
+                  className="border-rounded d-block m-auto"
+                  src={
+                    currentUser.avatar
+                      ? `${url}/${currentUser.avatar}`
+                      : "/avatar.webp"
+                  }
+                  alt=""
+                />
+                <label
+                  className="btn btn-outline-secondary w-100 mt-3"
+                  htmlFor="upload-image"
+                >
+                  <i class="fas fa-pen"></i>&nbsp;Edit{" "}
+                </label>
+                <input
+                  type="file"
+                  hidden
+                  onChange={uploadProfileImage}
+                  id="upload-image"
+                />
+                <p className="text-center mt-1 text-dark">Welcome Back</p>
                 <p className="text-center">
                   <span className="h4">{currentUser.name}</span>
                 </p>
@@ -131,15 +153,18 @@ const UserProfile = () => {
           <div className="col-md-8 mb-4">
             <div className="card mb-4">
               <div className="card-header py-3">
-                <h5 className="mb-0"> <i class="fas fa-pen-alt    "></i> Edit Profile</h5>
+                <h5 className="mb-0">
+                  {" "}
+                  <i class="fas fa-pen-alt    "></i> Edit Profile
+                </h5>
               </div>
               <div className="card-body">
-              <form onSubmit={profileForm.handleSubmit}>
+                <form onSubmit={profileForm.handleSubmit}>
                   {/* 2 column grid layout with text inputs for the first and last names */}
                   <div className=" mb-4">
                     <div className="col">
                       <div className="">
-                      <label className="form-label" htmlFor="form7Example1">
+                        <label className="form-label" htmlFor="form7Example1">
                           Full Name
                         </label>
                         <input
@@ -149,29 +174,26 @@ const UserProfile = () => {
                           onChange={profileForm.handleChange}
                           className="form-control"
                         />
-                        
                       </div>
                     </div>
-                    
                   </div>
                   <div className="mb-4">
-                      <div className="">
+                    <div className="">
                       <label className="form-label" htmlFor="form7Example2">
-                          Email
-                        </label>
-                        <input
-                          type="email"
-                          id="email"
-                          value={profileForm.values.email}
-                          onChange={profileForm.handleChange}
-                          className="form-control"
-                        />
-                        
-                      </div>
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        value={profileForm.values.email}
+                        onChange={profileForm.handleChange}
+                        className="form-control"
+                      />
                     </div>
+                  </div>
                   {/* Text input */}
                   <div className=" mb-4">
-                  <label className="form-label" htmlFor="form7Example3">
+                    <label className="form-label" htmlFor="form7Example3">
                       Password
                     </label>
                     <input
@@ -181,13 +203,12 @@ const UserProfile = () => {
                       onChange={profileForm.handleChange}
                       className="form-control"
                     />
-                   
                   </div>
-                  
-                  
-                 
-                  
-                  <button className="btn btn-primary"> <i class="fa-solid fa-arrows-rotate"></i> Update Profile</button>
+
+                  <button className="btn btn-primary">
+                    {" "}
+                    <i class="fa-solid fa-arrows-rotate"></i> Update Profile
+                  </button>
                 </form>
               </div>
             </div>

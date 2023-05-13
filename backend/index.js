@@ -23,6 +23,8 @@ app.use('/util', utilRouter);
 app.use('/response', responseRouter);
 
 
+app.use(express.static('./static/uploads'));
+
 app.get('/', (req, res ) => {
     res.send('Working Perfectly')
 });
