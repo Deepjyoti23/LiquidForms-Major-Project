@@ -10,7 +10,7 @@ const Footer = () => {
     className="text-center text-dark p-3"
     style={{ backgroundImage: "linear-gradient(45deg,#9fdbfe,#b5d9f4)" }}
   >
-    © 2023 Copyright
+    © 2023 Copyright: Liquid Forms
     
   </div>
   {/* Copyright */}

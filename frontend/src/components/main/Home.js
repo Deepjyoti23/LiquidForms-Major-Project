@@ -72,9 +72,9 @@ const Home = () => {
                   className="d-block w-100"
                   alt="Sunset Over the City"
                 />
-                <div className="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <div className="carousel-caption d-none d-md-block text-dark">
+                  <h3 className='fw-bold'>Powerful forms get it done</h3>
+                  <p className='fw-bold'>We believe the right form makes all the difference. Go from busywork to less work with powerful forms that use conditional logic, accept payments, generate reports, and automate workflows.</p>
                 </div>
               </div>
               {/* Single item */}
@@ -151,8 +151,8 @@ const Home = () => {
                   alt="Hollywood Sign on The Hill"
                 />
                 <div className="card-body">
-                  <h4 className="card-title fw-bold">Build the form you need</h4>
-                  <p className="card-text" >
+                  <h4 className="card-title fw-bold mb-2">Build the form you need</h4>
+                  <p className="card-text fw-bold" style={{fontFamily:"cursive"}}>
                   Create customized forms tailored to your unique needs in just minutes, without any coding or technical expertise required.
                   </p>
                 </div>
@@ -166,8 +166,8 @@ const Home = () => {
                   alt="Palm Springs Road"
                 />
                 <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">This is a short card.</p>
+                  <h4 className="card-title fw-bold mb-2">Highly Customised forms </h4>
+                  <p className="card-text fw-bold" style={{fontFamily:"cursive"}}>Unlock the power of highly customizable forms tailored to your exact specifications</p>
                 </div>
               </div>
             </div>
@@ -179,10 +179,9 @@ const Home = () => {
                   alt="Los Angeles Skyscrapers"
                 />
                 <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-                  <p className="card-text">
-                    This is a longer card with supporting text below as a natural lead-in
-                    to additional content.
+                  <h4 className="card-title fw-bold mb-2">Changing Database</h4>
+                  <p className="card-text fw-bold" style={{fontFamily:"cursive"}}>
+                  Enables you to leverage the advantages of different database systems and optimize your data storage strategy, ensuring efficient form management and data retrieval in a manner that aligns with your specific requirements.
                   </p>
                 </div>
               </div>

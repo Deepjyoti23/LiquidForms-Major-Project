@@ -185,8 +185,18 @@ const Preview = () => {
     );
   };
 
+  const setBackground = () => {
+    if (formDetails && formDetails.background) {
+      return formDetails.background.type === "color"
+        ? formDetails.background.value
+        : "url('" + formDetails.background.value + "')";
+    }
+  };
+
   return (
-    <div >
+    <div 
+    style={{ background: setBackground(), minHeight: "100vh", backgroundSize: 'cover', backgroundAttachment: 'fixed' }}
+    >
       <div className="col-8 mx-auto py-5">
         {/* {topHeader} */}
         <div className="card mb-2">

@@ -56,6 +56,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import ResponseManage from "./ResponseManage";
 import SheetCreator from "./dbForms/SheetCreator";
 import MongoDB from "./dbForms/MongoDB";
+import { toast } from "react-hot-toast";
 // import './addForm.css';
 
 const EditForm = () => {
@@ -455,6 +456,7 @@ const EditForm = () => {
     console.log(res.status);
     const data = await res.json();
     console.log(data);
+    toast.success('Form Updated!');
     //success alert
   };
 

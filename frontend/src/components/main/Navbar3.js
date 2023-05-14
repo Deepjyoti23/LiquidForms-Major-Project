@@ -58,11 +58,7 @@ const Navbar3 = () => {
               SignUp
             </NavLink>
           </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/main/Live">
-              LiveForm
-            </NavLink>
-          </li>
+          
         </ul>
         {/* Left links */}
         <div className="d-flex align-items-center">

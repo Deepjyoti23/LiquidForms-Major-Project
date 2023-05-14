@@ -61,11 +61,11 @@ import {
             <div>
               <div className="row">
                 <div className="col-md-4 ">
-                  <p>Email : </p>
+                  {/* <p>Email : </p> */}
                   <p>Form ID : </p>
                 </div>
                 <div className="col-md-4">
-                  <p className="fw-bold">{responseList[selResponse].email}</p>
+                  {/* <p className="fw-bold">{responseList[selResponse].email}</p> */}
                   <p className="fw-bold">{responseList[selResponse]._id}</p>
                 </div>
               </div>
