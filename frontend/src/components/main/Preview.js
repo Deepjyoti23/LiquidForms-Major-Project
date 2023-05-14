@@ -186,7 +186,7 @@ const Preview = () => {
   };
 
   return (
-    <div style={{backgroundColor:"#f0fbff"}}>
+    <div >
       <div className="col-8 mx-auto py-5">
         {/* {topHeader} */}
         <div className="card mb-2">

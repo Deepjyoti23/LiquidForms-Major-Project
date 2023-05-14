@@ -32,6 +32,7 @@ function App() {
             <Route path="sign" element={<Signup />}/>
             <Route path="login" element={<Login />}/>
             <Route path="loginn" element={<Login_new />}/>
+            <Route path="loginn" element={<LiveForm />}/>
             <Route path="preview/:formid" element={<Preview />}/>
           </Route>
           <Route path="user" element={<User />}>

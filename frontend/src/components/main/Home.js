@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import './navbar.css'
 
 const Home = () => {
   return (
@@ -19,23 +20,6 @@ const Home = () => {
                         <span>Customize forms effortlessly with Liquid Forms</span> <br />
                         <span className="h2">Tailor made solutions for your unique needs</span>
                       </h1>
-                      {/* <NavLink
-                      className="btn btn-outline-light btn-lg btn-rounded py-3 px-5 mb-2 mb-md-0 me-md-2"
-                      to="/main/login"
-                      role="button"
-                      aria-controls="#picker-editor"
-                    >
-                      Get started
-                    </NavLink>
-                    <a
-                      className="btn btn-link btn-lg btn-rounded py-3 px-5 mb-2 mb-md-0 text-white"
-                      style={{ backgroundColor: "transparent" }}
-                      href="#learn-more"
-                      role="button"
-                      aria-controls="#picker-editor"
-                    >
-                      Learn more
-                    </a> */}
                     </div>
                   </div>
                 </div>
@@ -84,7 +68,7 @@ const Home = () => {
               {/* Single item */}
               <div className="carousel-item active">
                 <img
-                  src="https://wpliveforms.com/wp-content/uploads/2020/10/5-Best-Form-Builder-Plugins-for-WordPress.jpg"
+                  src="https://woorise.com/wp-content/uploads/2020/08/wordpress-form-builders.png"
                   className="d-block w-100"
                   alt="Sunset Over the City"
                 />
@@ -96,7 +80,7 @@ const Home = () => {
               {/* Single item */}
               <div className="carousel-item">
                 <img
-                  src="https://woorise.com/wp-content/uploads/2020/08/wordpress-form-builders.png"
+                  src="https://wpliveforms.com/wp-content/uploads/2020/10/5-Best-Form-Builder-Plugins-for-WordPress.jpg"
                   className="d-block w-100"
                   alt="Canyon at Nigh"
                 />
@@ -142,64 +126,148 @@ const Home = () => {
             </button>
           </div>
           {/* Carousel wrapper */}
-      <div>
-        <h3 className='text-center text-white pt-5'>About us</h3>
-        <p className='text-center text-white mb-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae earum aperiam nostrum facilis soluta debitis qui sint, 
-          voluptas nulla tenetur omnis sequi alias nesciunt in, minus eum veritatis amet deserunt nihil, accusantium et. Nam, omnis 
-          repudiandae cumque animi perspiciatis et.</p>
-      </div>
-      <div className="row row-cols-1 row-cols-md-3 g-4">
-  <div className="col">
-    <div className="card h-100">
-      <img
-        src="https://cdn.shopify.com/app-store/listing_images/7919647ec002bc41691875d798fc4339/promotional_image/CKHv6LqTm_sCEAE=.png?height=720&width=1280"
-        className="card-img-top"
-        alt="Hollywood Sign on The Hill"
-      />
-      <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <p className="card-text">
-          This is a longer card with supporting text below as a natural lead-in
-          to additional content. This content is a little bit longer.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div className="col">
-    <div className="card h-100">
-      <img
-        src="https://forms.io/images/blog/best-form-builder.png?v=1682922096820053088"
-        className="card-img-top"
-        alt="Palm Springs Road"
-      />
-      <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <p className="card-text">This is a short card.</p>
-      </div>
-    </div>
-  </div>
-  <div className="col">
-    <div className="card h-100">
-      <img
-        src="https://cdn.educba.com/academy/wp-content/uploads/2021/08/DBMS-Concepts-1.jpg"
-        className="card-img-top"
-        alt="Los Angeles Skyscrapers"
-      />
-      <div className="card-body">
-        <h5 className="card-title">Card title</h5>
-        <p className="card-text">
-          This is a longer card with supporting text below as a natural lead-in
-          to additional content.
-        </p>
-      </div>
-    </div>
-  </div>
- 
-</div>
+          <div className=" mt-5" style={{backgroundColor:"#ece8ef "}}>
+            <h3 className='text-center text-dark fw-bold pt-5' style={{color:"rgb(2 2 88)"}}>About Us</h3>
+            <p className='text-center text-dark mb-4 fw-bold me-4 ms-4' style={{fontFamily:"Roboto"}}>Liquid Forms is a software platform designed to enable users to create, customize, and edit various types of forms quickly and easily. This platform provides a range of features and tools to simplify the process of creating forms, including form templates, and various customization options. With Project Liquid Forms, users can create a wide variety of forms, including surveys, order forms, registration forms, contact forms, and more. The platform is also designed to be user-friendly, making it accessible to users of all technical backgrounds.</p>
+            <div className="d-flex justify-content-center mb-5">
+              <NavLink
+                className=" btn btn-outline-light btn-lg btn-rounded py-3 px-5 mb-5  me-md-2 text-white fw-bold"
+                to="/main/login"
+                role="button"
+                aria-controls="#picker-editor"
+                style={{ backgroundColor: "rgb(2 2 88)" }}
+              >
+                Get started
+              </NavLink>
+
+            </div>
+          </div>
+          <div className="row row-cols-1 row-cols-md-3  mt-4 g-4 mb-5">
+            <div className="col">
+              <div className="card h-100">
+                <img
+                  src="https://cdn.shopify.com/app-store/listing_images/7919647ec002bc41691875d798fc4339/promotional_image/CKHv6LqTm_sCEAE=.png?height=720&width=1280"
+                  className="card-img-top"
+                  alt="Hollywood Sign on The Hill"
+                />
+                <div className="card-body">
+                  <h4 className="card-title fw-bold">Build the form you need</h4>
+                  <p className="card-text" >
+                  Create customized forms tailored to your unique needs in just minutes, without any coding or technical expertise required.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="card h-100">
+                <img
+                  src="https://forms.io/images/blog/best-form-builder.png?v=1682922096820053088"
+                  className="card-img-top"
+                  alt="Palm Springs Road"
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Card title</h5>
+                  <p className="card-text">This is a short card.</p>
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="card h-100">
+                <img
+                  src="/database.jpg"
+                  className="card-img-top"
+                  alt="Los Angeles Skyscrapers"
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Card title</h5>
+                  <p className="card-text">
+                    This is a longer card with supporting text below as a natural lead-in
+                    to additional content.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
 
         </div>
       </>
-      
+      < >
+        {/* Footer */}
+        <footer className="text-center text-lg-start bg-light text-muted mt-3" style={{ backgroundImage: "linear-gradient(360deg,#9fdbfe00,#b5d9f447)" }}>
+          {/* Section: Social media */}
+
+          <div className="mt-5">
+            <div className="container text-center text-md-start mt-5">
+              {/* Grid row */}
+              <div className="row mt-3">
+                {/* Grid column */}
+                <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 mt-3">
+                  {/* Content */}
+                  <h6 className="text-uppercase fw-bold mb-4">
+                    <img className='me-2' src="/form (1).png" height={40} alt="" />
+                    Liquid Forms
+                  </h6>
+                  <p>
+                    Liquid Forms helps users to design forms according to their specific requirements, add different types of fields, customize the layout and design, and possibly integrate with other systems or platforms.
+                  </p>
+                </div>
+                {/* Grid column */}
+                {/* Grid column */}
+
+                {/* Grid column */}
+                {/* Grid column */}
+                <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 mt-4">
+                  {/* Links */}
+                  <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
+                  <p>
+                    <a href="/main/login" className="text-reset">
+                      Login
+                    </a>
+                  </p>
+                  <p>
+                    <a href="/main/sign" className="text-reset">
+                      Sign Up
+                    </a>
+                  </p>
+                  <p>
+                    <a href="/user/ManageForm" className="text-reset">
+                      Manage forms
+                    </a>
+                  </p>
+                  <p>
+
+                  </p>
+                </div>
+                {/* Grid column */}
+                {/* Grid column */}
+                <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 mt-4">
+                  {/* Links */}
+                  <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
+                  <p>
+                    <i className="fas fa-home me-3" /> Lucknow, UP            </p>
+                  <p>
+                    <i className="fas fa-envelope me-3" />
+                    deepjyoti116@gmail.com
+                  </p>
+                  <p>
+                    <i className="fas fa-phone me-3" /> 7390973268
+                  </p>
+
+                </div>
+                {/* Grid column */}
+              </div>
+              {/* Grid row */}
+            </div>
+          </div>
+          {/* Section: Links  */}
+
+        </footer>
+        {/* Footer */}
+      </>
+
     </div>
   )
 }

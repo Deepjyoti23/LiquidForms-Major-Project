@@ -62,7 +62,7 @@ const Signup = () => {
     validationSchema : SignupSchema
   });
   return (
-  <section className="vh-100"style={{backgroundColor:"#f0fbff"}} >
+  <section className="vh-90"style={{backgroundColor:"#f0fbff"}} >
   <div className="container py-3 h-90">
     <div className="row d-flex justify-content-center align-items-center h-100">
       <div className="col-lg-12 col-xl-11">
