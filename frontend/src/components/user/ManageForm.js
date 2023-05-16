@@ -84,8 +84,8 @@ const ManageForm = () => {
   const displayForms = () => {
     if (!loading && formList)
       return formList.map((form) => (
-        <div className="col-sm-4 col-md-3 mb-3">
-          <div className="card border m-2 h-100 theme-accent-back"style={{border:"50%"}}>
+        <div className="col col-sm-6 col-md-4 col-lg-3 mb-3 ">
+          <div className="card border  h-100 theme-accent-back"style={{border:"50%"}}>
             <div className='card-header border nav-log-bg'>
 
               <div className="d-flex align-items-center">
