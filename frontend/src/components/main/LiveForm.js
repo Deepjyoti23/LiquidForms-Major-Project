@@ -56,6 +56,18 @@ const LiveForm = () => {
       tempData,
       ...response.slice(ques_i + 1),
     ]);
+    console.log(response);
+  };
+  
+  const updateFileAnswer = (ques_i, filename) => {
+    let tempData = response[ques_i];
+    tempData.answer = filename;
+    setResponse([
+      ...response.slice(0, ques_i),
+      tempData,
+      ...response.slice(ques_i + 1),
+    ]);
+    console.log(response);
   };
 
   const createSingleResponse = response => {
@@ -104,6 +116,19 @@ const LiveForm = () => {
       window.location.replace("/thankyou");
     }
   };
+
+  const uploadFile = async (e, ques_i) => {
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append("myfile", file);
+    const res = await fetch(url + "/util/uploadfile", {
+      method: "POST",
+      body: formData,
+    });
+    // const data = await res.json();
+    // console.log(data);
+    updateFileAnswer(ques_i, file.name);
+  }
 
   const renderAnswer = (question, ques_i) => {
     if (question.type === "smalltext") {
@@ -162,6 +187,10 @@ const LiveForm = () => {
           </FormGroup>
         </FormControl>
       );
+    }else if(question.type === 'file'){
+      return (
+        <input type="file" onChange={async e => await uploadFile(e, ques_i)} className="form-control" />
+      )
     }
   };
 
