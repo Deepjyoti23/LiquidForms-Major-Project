@@ -112,7 +112,7 @@ const ManageForm = () => {
             <div className="card-footer border bg-dark">
             <Link
                 to={"/user/editform/" + form._id}
-                className="btn btn-primary m-2"
+                className="btn btn-primary mx-2"
               >
                 <i class="fas fa-pen-alt "></i>
               </Link>
@@ -157,10 +157,10 @@ const ManageForm = () => {
         </div>
       </div>
     <div className='row pt-5'>
-      <div className='col d-flex'>
+      {/* <div className='col'> */}
         {displayForms()}
           
-      </div>
+      {/* </div> */}
 
     </div>
     

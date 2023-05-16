@@ -29,7 +29,6 @@ const LiveForm = () => {
     const response = await fetch(url + "/form/getbyid/" + formid);
     const dbFormData = await response.json();
     console.log(dbFormData);
-
     setFormDetails(dbFormData);
     setResponse(dbFormData.data.questions);
     setFormLoading(false);
@@ -59,7 +58,31 @@ const LiveForm = () => {
     ]);
   };
 
+  const createSingleResponse = response => {
+    const obj = {};
+    for (let ques of response) {
+      obj[ques.name] = ques.answer;
+    }
+    return obj;
+  }
+
+  const savetoMongoDB = async (data) => {
+    const res = await fetch(url + '/util/save-res-to-mongo', {
+      method: "POST",
+      body: JSON.stringify({
+        formid: formDetails._id, resObj: data
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log(res.status);
+    const jsonData = await res.json();
+    console.log(jsonData);
+  }
+
   const submitResponse = async () => {
+    if (formDetails.dbType === "MongoDB") savetoMongoDB(createSingleResponse(response));
     const res = await fetch(url + "/response/add", {
       method: "POST",
       body: JSON.stringify({
