@@ -159,7 +159,7 @@ const ManageForm = () => {
     <div className='row pt-5'>
       <div className='col d-flex'>
         {displayForms()}
-
+          
       </div>
 
     </div>

@@ -168,7 +168,7 @@ const Preview = () => {
   const renderForm = () => {
     return !formLoading && formDetails ? (
       <div className="card ">
-        <p className="h2 my-3 ps-3">{formDetails.heading}</p>
+        <p className="text-center h2 my-3 ps-3">{formDetails.heading}</p>
         <p className="h6 ps-3">{formDetails.description}</p>
            <hr />
         {response.map((question, ques_i) => (
@@ -194,10 +194,15 @@ const Preview = () => {
   };
 
   return (
-    <div 
-    style={{ background: setBackground(), minHeight: "100vh", backgroundSize: 'cover', backgroundAttachment: 'fixed' }}
-    >
-      <div className="col-8 mx-auto py-5">
+    <div style={{ background: setBackground(), minHeight: "100vh", backgroundSize: 'cover', backgroundAttachment: 'fixed' }}>
+      <div style={{backgroundColor:"#99ecf41a"}}>
+
+      <div className="container d-flex align-items-center pt-2 mb-2" style={{ color: "#027D6F" }} >
+        <img className="mb-2" src="/preview.png" height={100} alt="" />
+        <h2 className='ms-1 fw-bold' style={{fontFamily:"system-ui"}}>Preview Forms</h2>
+      </div>
+      </div>
+      <div className="col-8 mx-auto py-3">
         {/* {topHeader} */}
         <div className="card mb-2">
           <div className="card-body">

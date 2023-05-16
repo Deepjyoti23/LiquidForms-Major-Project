@@ -64,43 +64,43 @@ const Home = () => {
               />
             </div>
             {/* Inner */}
-            <div className="carousel-inner">
+            <div className="carousel-inner rounded-5" >
               {/* Single item */}
-              <div className="carousel-item active">
+              <div className="carousel-item active" data-mdb-interval="1000">
                 <img
                   src="https://woorise.com/wp-content/uploads/2020/08/wordpress-form-builders.png"
                   className="d-block w-100"
                   alt="Sunset Over the City"
                 />
                 <div className="carousel-caption d-none d-md-block text-dark">
-                  <h3 className='fw-bold'>Powerful forms get it done</h3>
+                  <h2 className='fw-bold'>Powerful forms get it done</h2>
                   <p className='fw-bold'>We believe the right form makes all the difference. Go from busywork to less work with powerful forms that use conditional logic, accept payments, generate reports, and automate workflows.</p>
                 </div>
               </div>
               {/* Single item */}
-              <div className="carousel-item">
+              <div className="carousel-item"  data-mdb-interval="1000">
                 <img
                   src="https://wpliveforms.com/wp-content/uploads/2020/10/5-Best-Form-Builder-Plugins-for-WordPress.jpg"
                   className="d-block w-100"
                   alt="Canyon at Nigh"
                 />
-                <div className="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div className="carousel-caption d-none d-md-block fw-bold text-white"  data-mdb-interval="2000">
+                  <h1 className='fw-bold '>Free Online Form Builder</h1>
+                  <p className='fw-bold'>Simplify the process of creating and editing forms with liquid design.</p>
                 </div>
               </div>
               {/* Single item */}
-              <div className="carousel-item">
+              <div className="carousel-item" data-mdb-interval="1000">
                 <img
                   src="https://wpmanageninja.com/wp-content/uploads/2019/06/Why-Should-You-Use-WordPress-Form-Builder-Plugin-01.png"
                   className="d-block w-100"
                   alt="Cliff Above a Stormy Sea"
                 />
-                <div className="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>
-                    Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                  </p>
+                <div className="carousel-caption d-none d-md-block fw-bold text-white">
+                  <h2 className='fw-bold text-danger'>Create beautiful forms, surveys, and quizzes that will bring more responses.</h2>
+                  {/* <p className='fw-bold'>
+                  Create beautiful forms, surveys, and quizzes that will bring more responses.
+                  </p> */}
                 </div>
               </div>
             </div>
@@ -151,8 +151,8 @@ const Home = () => {
                   alt="Hollywood Sign on The Hill"
                 />
                 <div className="card-body">
-                  <h4 className="card-title fw-bold mb-2">Build the form you need</h4>
-                  <p className="card-text fw-bold" style={{fontFamily:"cursive"}}>
+                  <h4 className="card-title fw-bold mb-2" style={{color:"#F50057"}}>Build the form you need</h4>
+                  <p className="card-text fw-bold" style={{color:"rgb(3 3 136 / 79%)", fontFamily:"cursive"}}>
                   Create customized forms tailored to your unique needs in just minutes, without any coding or technical expertise required.
                   </p>
                 </div>
@@ -166,8 +166,8 @@ const Home = () => {
                   alt="Palm Springs Road"
                 />
                 <div className="card-body">
-                  <h4 className="card-title fw-bold mb-2">Highly Customised forms </h4>
-                  <p className="card-text fw-bold" style={{fontFamily:"cursive"}}>Unlock the power of highly customizable forms tailored to your exact specifications</p>
+                  <h4 className="card-title fw-bold mb-2" style={{color:"#F50057"}}>Highly Customised forms </h4>
+                  <p className="card-text fw-bold" style={{color:"rgb(3 3 136 / 79%)", fontFamily:"cursive"}}>Unlock the power of highly customizable forms tailored to your exact specifications</p>
                 </div>
               </div>
             </div>
@@ -179,8 +179,8 @@ const Home = () => {
                   alt="Los Angeles Skyscrapers"
                 />
                 <div className="card-body">
-                  <h4 className="card-title fw-bold mb-2">Changing Database</h4>
-                  <p className="card-text fw-bold" style={{fontFamily:"cursive"}}>
+                  <h4 className="card-title fw-bold mb-2" style={{color:"#F50057"}}>Easy Database</h4>
+                  <p className="card-text fw-bold" style={{color:"rgb(3 3 136 / 79%)", fontFamily:"cursive"}}>
                   Enables you to leverage the advantages of different database systems and optimize your data storage strategy, ensuring efficient form management and data retrieval in a manner that aligns with your specific requirements.
                   </p>
                 </div>

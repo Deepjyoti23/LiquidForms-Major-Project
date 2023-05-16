@@ -521,7 +521,7 @@ const EditForm = () => {
     >
       <div className="col-md-8 mx-auto pt-4" style={{minHeight: '100vh'}}>
         {/* <div className="container"> */}
-        <Card className="my-2">
+        <Card className="my-2 ">
           <CardContent>
             <div className="d-flex justify-content-start align-items-center">
               <TextField className="mr-3"

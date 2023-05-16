@@ -175,7 +175,14 @@ const LiveForm = () => {
       className=""
       style={{ background: setBackground(), minHeight: "100vh", backgroundSize: 'cover', backgroundAttachment: 'fixed' }}
     >
-      <div className="container py-5">
+      <div style={{backgroundColor:"#f0fbff"}}>
+
+      <div className="container d-flex align-items-center pt-2 mb-2" style={{ color: "#00B0FF" }} >
+        <img className="mb-2" src="/add response.png" height={100} alt="" />
+        <h2 className='ms-1 fw-bold' style={{fontFamily:"system-ui"}}>Add Response</h2>
+      </div>
+      </div>
+      <div className="container py-3">
         {/* {topHeader} */}
         <div className="card mb-2">
           <div className="card-body">
