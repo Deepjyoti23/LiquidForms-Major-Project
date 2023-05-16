@@ -67,7 +67,7 @@ const ResponseManage = ({ formid }) => {
               <img style={{cursor: 'pointer'}} src={app_config.apiUrl+'/'+ question.answer} alt="" height={100} onClick={e => {
                 window.open(app_config.apiUrl+'/'+ question.answer, '_blank');
               }} />
-            ) : (<h1 className="text-muted">No File Uploaded</h1>)}</p>
+            ) : (<h6 className="text-muted">No File Uploaded</h6>)}</p>
           </div>
         </div>
       );
