@@ -75,7 +75,7 @@ const Signup = () => {
                 </p>
                 <div className='mb-5 d-flex justify-content-center'>
 
-                <a href="#!" className="small  text-muted">
+                <a href="#!" className="small text-muted">
                     Already have an account.
                   </a>
                   <a href="/main/login" className="small text-primary fw-bold ">
@@ -85,6 +85,7 @@ const Signup = () => {
                 <form className="mx-1 mx-md-4 " onSubmit={SignupForm.handleSubmit}>
                   <div className="d-flex flex-row align-items-center mb-4">
                     <i className="fas fa-user fa-lg me-3 fa-fw" />
+              
                     <div className=" flex-fill mb-0">
                       <input
                         type="text"
